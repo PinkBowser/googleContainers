@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gke-deployment-groen
+  labels:
+    app: gkeapp
+    selectorlabel: groen
+spec:
+  replicas: 1  # Number of replicas you want to run
+  selector:
+    matchLabels:
+      app: gkeapp
+      selectorlabel: groen
+  template:
+    metadata:
+      labels:
+        app: gkeapp
+        selectorlabel: groen  # Label applied to the pod template
+    spec:
+      containers:
+      - name: gke-container
+        image: europe-west4-docker.pkg.dev/saxionclouds/lucas/lucas:groen  # Replace <PROJECT_ID> with your actual project ID
+        ports:
+        - containerPort: 80  # Example container port, adjust as needed
