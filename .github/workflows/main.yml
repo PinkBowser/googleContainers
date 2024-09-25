@@ -3,14 +3,14 @@ name: Build and Deploy to GKE
 on:
   push:
     branches:
-      - main
+      - test
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: autopilot-cluster-1    # cluster name
   GKE_ZONE: europe-west1   # cluster zone
   IMAGE: lucas # image name
-  IMAGE_TAG: groen # image tag
+  IMAGE_TAG: blauw # image tag
   GAR_ZONE: europe-west4 # artifact registry zone
   GAR_REPO: lucas # artifact registry repository
 
